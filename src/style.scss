@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap');
+
+.hero-body{
+  display: flex;
+  justify-content: center;
+}
+  .home{
+    background-image: url("https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    // background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    font-family: 'Just Another Hand', cursive;
+    .title {
+      color: white;
+      font-size: 100px;
+      text-transform: capitalize;
+    }
+  }
+
+.navbar {
+  font-family: 'Just Another Hand', cursive;
+  background-color: lightpink;
+  font-size: 40px;
+
+  .navbar-title {
+    color: white;
+    font-size: 50px;
+  }
+}
+
+.movietitle {
+  // background-color: rgba(255,182,193,0.5);
+  width: 600px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 80%;
+
+  .movie-text {
+    font-size: 100px;
+    text-align: center;
+  }
+
+
+}
