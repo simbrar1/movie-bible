@@ -69,7 +69,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
           link: 'https://www.imdb.com/title/tt0172495/?ref_=nv_sr_1?ref_=nv_sr_1',
           user: users[1]
-          //add in boolean string for link to IMD. here just put link with the actual link and then on front end make a link in JS
+        }, {
+          name: 'Cold Mountain',
+          year: '2003',
+          production: 'Paramount Pictures',
+          starRating: 4.9,
+          image: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/7886/production/_104145803_gladiator_gettyuniversal.jpg',
+          description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
+          link: 'https://www.imdb.com/title/tt0172495/?ref_=nv_sr_1?ref_=nv_sr_1',
+          user: users[1]
         }
       ])
     })
