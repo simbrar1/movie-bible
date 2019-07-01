@@ -47,7 +47,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           year: '2014',
           production: 'Sony Pictures',
           starRating: 4.2,
-          image: 'https://resizing.flixster.com/WrcdfzsIkJ4FO9iFrp4RPydRuhw=/300x300/v1.bjs1MTg1Nzk7ajsxODA5NjsxMjAwOzE0MDg7Nzky',
+          image: 'https://m.media-amazon.com/images/M/MV5BMTQzMTcwMzgyMV5BMl5BanBnXkFtZTgwMzAyMzQ2MzE@._V1_.jpg',
           description: 'Dave Skylark and his producer Aaron Rapaport run the celebrity tabloid show "Skylark Tonight". When they land an interview with a surprise fan, North Korean dictator Kim Jong-un, they are recruited by the CIA to assassinate him.',
           link: 'https://www.imdb.com/title/tt2788710/?ref_=fn_al_tt_1',
           user: users[1]
@@ -65,7 +65,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           year: '2000',
           production: 'Paramount Pictures',
           starRating: 4.9,
-          image: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/7886/production/_104145803_gladiator_gettyuniversal.jpg',
+          image: 'https://images-na.ssl-images-amazon.com/images/I/51o9U06EV8L.jpg',
           description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
           link: 'https://www.imdb.com/title/tt0172495/?ref_=nv_sr_1?ref_=nv_sr_1',
           user: users[1]
@@ -74,9 +74,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           year: '2003',
           production: 'Paramount Pictures',
           starRating: 4.9,
-          image: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/7886/production/_104145803_gladiator_gettyuniversal.jpg',
-          description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
-          link: 'https://www.imdb.com/title/tt0172495/?ref_=nv_sr_1?ref_=nv_sr_1',
+          image: 'https://images-na.ssl-images-amazon.com/images/I/81oeKKl60EL._RI_.jpg',
+          description: 'In the waning days of the American Civil War, a wounded soldier embarks on a perilous journey back home to Cold Mountain, North Carolina to reunite with his sweetheart.',
+          link: 'https://www.imdb.com/title/tt0159365/?ref_=nv_sr_1?ref_=nv_sr_1',
           user: users[1]
         }
       ])
