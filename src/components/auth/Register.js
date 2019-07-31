@@ -34,10 +34,10 @@ class Register extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h2 className="title">Register</h2>
             <div className="field">
-              <label className="label">Username</label>
+              <label className="label ">Username</label>
               <div className="control">
                 <input
-                  className={
+                  className= {
                     this.state.errors &&
                     `input ${this.state.errors.username ? 'is-danger' : ''}`
                   }

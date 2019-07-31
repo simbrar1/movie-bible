@@ -9,14 +9,23 @@ class MoviesShow extends React.Component {
 
     this.state = { movies: null }
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
   componentDidMount() {
+    this.getData()
+  }
+
+  handleChange(e) {
+    this.setState({ comment: { text: e.target.value }})
+  }
+
+  getData() {
     axios.get(`/api/movies/${this.props.match.params.id}`)
       .then(res => this.setState({ movies: res.data }))
       .catch(err => console.log(err))
   }
-
   handleDelete() {
     axios.delete(`/api/movies/${this.props.match.params.id}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
@@ -25,8 +34,29 @@ class MoviesShow extends React.Component {
       .catch(err => console.log(err.response))
   }
 
+  handleSubmit(e) {
+    e.preventDefault()
+    axios.post(`/api/movies/${this.props.match.params.id}/comments`,this.state.comment, {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err.response))
+  }
+
   isOwner() {
     return Auth.getPayload().sub === this.state.movies.user._id
+  }
+
+  isOwnerComment(comment) {
+    return Auth.getPayload().sub === comment.user._id
+  }
+
+  handleCommentDelete(comment) {
+    axios.delete(`/api/movies/${this.props.match.params.id}/comments/${comment._id}`, {
+      headers: { 'Authorization': Auth.getToken()}
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -67,11 +97,38 @@ class MoviesShow extends React.Component {
               <a href={movies.link} target="_blank" rel="noopener noreferrer">See more on IMDb</a>
             </div>
           </div>
+          {movies.comments.map(comment => (
+            <div key={comment._id} className="card">
+              <div className="card-content">
+                {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+              </div>
+              {this.isOwnerComment(comment) && <button
+                className="button is-danger"
+                onClick={() => this.handleCommentDelete(comment)}
+              >Delete
+              </button>}
+            </div>
+          ))}
+          <hr />
+          {Auth.isAuthenticated() &&
+            <form onSubmit={this.handleSubmit}>
+              <div className="field">
+                <div className="control">
+                  <textarea
+                    className="textarea"
+                    placeholder="What are your thoughts about this movie...."
+                    onChange={this.handleChange}
+
+                  >
+                  </textarea>
+                </div>
+              </div>
+              <button className="button" type="submit">Comment</button>
+            </form>}
         </div>
       </main>
     )
   }
-
 }
 
 export default MoviesShow

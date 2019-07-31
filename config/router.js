@@ -15,7 +15,6 @@ router.route('/movies/:id')
 router.route('/movies/:id/comments')
   .post(secureRoute, movies.commentCreate)
 
-
 router.route('/movies/:id/comments/:commentId')
   .delete(secureRoute, movies.commentDelete)
 

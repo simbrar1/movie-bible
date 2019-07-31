@@ -20,11 +20,11 @@ class NavBar extends React.Component {
     this.setState({ navbarOpen: !this.state.navbarOpen})
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.location.pathname !== prevProps.location.pathname) {
-  //     this.setState({ navbarOpen: false })
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({ navbarOpen: false })
+    }
+  }
 
 
   render() {
@@ -32,7 +32,7 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-title navbar-item">Movie Bible</Link>
+            <Link to="/" className="navbar-title navbar-item">Movie Bible 🎬</Link>
             <a role="button" className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" onClick={this.toggleNavbar}>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
